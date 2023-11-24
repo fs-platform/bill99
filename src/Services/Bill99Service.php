@@ -194,7 +194,14 @@ class Bill99Service
         $this ->form_params['orderId'] = $this ->orders_number.date('His');
         $this ->form_params['orderTime'] = date("YmdHis");
         $this ->form_params['orderTimestamp'] = date("YmdHis");
-        $this ->form_params['payerContactType'] = 1;
+
+        //判断email_address是否是邮箱
+        if (filter_var($this->email_address, FILTER_VALIDATE_EMAIL)) {
+            $this->form_params['payerContactType'] = 1;
+        } else {
+            $this->form_params['payerContactType'] = 2;
+        }
+
         $this ->form_params['payerContact'] = $this ->email_address;
         $this ->form_params['productDesc'] = $this->product_desc;
         $this ->form_params['orderAmount'] = preg_replace(
