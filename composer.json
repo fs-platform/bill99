@@ -1,0 +1,16 @@
+{
+    "name": "smbear/bill99",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Smbear\\Bill99\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "smile.yi",
+            "email": "smile.yi@feisu.com"
+        }
+    ],
+    "require": {}
+}
